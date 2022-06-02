@@ -13,8 +13,8 @@
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
-const char* ssid = "Phong123";
-const char* password = "01111960";
+const char* ssid = "Enter your SSID";
+const char* password = "Enter your Password";
 
 //Your Domain name with URL path or IP address with path
 const char* serverName = "http://192.168.1.106:1880/update-sensor";

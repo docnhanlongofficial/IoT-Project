@@ -17,7 +17,7 @@ const char* ssid = "Enter your SSID";
 const char* password = "Enter your Password";
 
 //Your Domain name with URL path or IP address with path
-const char* serverName = "http://192.168.1.106:1880/update-sensor";
+const char* serverName = "http://health-record-api.azurewebsites.net/api/Record/Create";
 
 // the following variables are unsigned longs because the time, measured in
 // milliseconds, will quickly become a bigger number than can be stored in an int.
@@ -55,9 +55,9 @@ void loop() {
       http.begin(client, serverName);
 
       // Specify content-type header
-      http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+      http.addHeader("Content-Type", "application/json");
       // Data to send with HTTP POST
-      String httpRequestData = "api_key=tPmAT5Ab3j7F9&sensor=BME280&value1=24.25&value2=49.54&value3=1005.14";           
+      String httpRequestData = "{\"userId\":\"95f4c4d5-a2b1-44fe-a1bd-e2e7854ddae8\",\"temperature\":\"37.0\",\"humidity\":\"50.0\"}";           
       // Send HTTP POST request
       int httpResponseCode = http.POST(httpRequestData);
       
